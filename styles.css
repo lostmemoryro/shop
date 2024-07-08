@@ -6,7 +6,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    color:black;
+    color: black;
     font-family: Arial, sans-serif;
     overflow: hidden;
     position: relative;
@@ -29,16 +29,14 @@ body, html {
     height: 100%;
     object-fit: cover;
     opacity: 40%;
-    transition: opacity 5s ease
+    transition: opacity 5s ease;
 }
-
 
 @media (min-width: 769px) {
     .background-video-container.web {
         display: block;
     }
 }
-
 
 @media (max-width: 768px) {
     .background-video-container.mobile {
@@ -62,70 +60,71 @@ body, html {
     transition: opacity 0.5s ease-in-out; 
 }
 
-a
-{
+a {
     position: absolute;
-    top:80%;
-    left:50%;
-    transform: translate(-50%, -50%);
+    top: 80%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     width: 200px;
     height: 60px;
     text-align: center;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-transform-origin: center center;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-perspective: 1000px;
+            perspective: 1000px;
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
 }
 
-span
-{
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-display: block;
-text-align: center;
-line-height: 60px;
-font-size: 24px;
-background: rgba(255,255,255,0.5);
-transform-style: preserve-3d;
-backface-visibility: hidden;
-border-radius: 30px;
-text-transform: uppercase;
-color: #fff;
-transition: 1s;
-
+span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    line-height: 60px;
+    font-size: 24px;
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    border-radius: 30px;
+    text-transform: uppercase;
+    color: #fff;
+    transition: 1s;
 }
 
-span.front
-{
-    transform:rotateX(0deg) translateZ(20px);
+span.front {
+    -webkit-transform: rotateX(0deg) translateZ(20px);
+            transform: rotateX(0deg) translateZ(20px);
 }
 
-a:hover span.front
-{
-    transform:rotateX(-180deg) translateZ(20px);
+a:hover span.front {
+    -webkit-transform: rotateX(-180deg) translateZ(20px);
+            transform: rotateX(-180deg) translateZ(20px);
 }
 
-span.back
-{
-    background: url(lostmemory-alb-line.png)no-repeat center center;
+span.back {
+    background: url('lostmemory-alb-line.png') no-repeat center center;
     background-size: cover;
-    transform:rotateX(180deg) translateZ(20px);
+    -webkit-transform: rotateX(180deg) translateZ(20px);
+            transform: rotateX(180deg) translateZ(20px);
 }
 
-a:hover span.back
-{
-    transform:rotateX(0deg) translateZ(20px);
+a:hover span.back {
+    -webkit-transform: rotateX(0deg) translateZ(20px);
+            transform: rotateX(0deg) translateZ(20px);
 }
 
-span.center 
-{
-    background: linear-gradient(to left, #000000 #ff0000) ;
+span.center {
+    background: linear-gradient(to left, #000000, #ff0000);
 }
 
-span.center:before
-{
+span.center:before {
     content: '';
     position: absolute;
     top: 0;
@@ -134,10 +133,11 @@ span.center:before
     height: 100%;
     background: linear-gradient(to left, #000000, #ff0000);
     border-radius: 30px;
-    transform:translateZ(-1px);
+    -webkit-transform: translateZ(-1px);
+            transform: translateZ(-1px);
 }
 
-a:hover span.center
-{
-    transform: rotateX(-180deg'angle');
+a:hover span.center {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
 }
