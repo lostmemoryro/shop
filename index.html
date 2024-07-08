@@ -10,13 +10,15 @@
 </head>
 <body>
     <div class="background-video-container web">
-        <video autoplay muted loop id="background-video-web">
+        <video autoplay muted loop playsinline id="background-video-web">
             <source src="videoweb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
     </div>
     <div class="background-video-container mobile">
-        <video autoplay muted loop id="background-video-mobile">
+        <video autoplay muted loop playsinline id="background-video-mobile">
             <source src="WhatsApp Video 2024-07-02 at 23.55.28.mp4" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
     </div>
     <div class="container">
@@ -27,6 +29,23 @@
     <script>
         $(document).ready(function() {
             $(".logo").animate({ opacity: 1 }, 2000);
+
+            var videoWeb = document.getElementById('background-video-web');
+            var videoMobile = document.getElementById('background-video-mobile');
+
+            function playVideo(videoElement) {
+                var playPromise = videoElement.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(function() {
+                    }).catch(function() {
+                        videoElement.muted = true;
+                        videoElement.play();
+                    });
+                }
+            }
+
+            playVideo(videoWeb);
+            playVideo(videoMobile);
         });
     </script>
 </body>
