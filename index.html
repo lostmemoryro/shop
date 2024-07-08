@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,10 +23,10 @@
     </div>
     <div class="container">
         <img src="lostmemory-alb-line.png" alt="Lost Memory" class="logo">
-        <a href="https://68ff15-1d.myshopify.com">
+        <a id="animatedButton" href="https://68ff15-1d.myshopify.com">
             <span class="front">Shop now</span>
             <span class="center"></span>
-            <span class="back" href="lostmemory-alb-line.png"></span>
+            <span class="back"></span>
         </a>
     </div>
 
@@ -41,6 +41,7 @@
                 var playPromise = videoElement.play();
                 if (playPromise !== undefined) {
                     playPromise.then(function() {
+                        
                     }).catch(function() {
                         videoElement.muted = true;
                         videoElement.play();
@@ -50,6 +51,14 @@
 
             playVideo(videoWeb);
             playVideo(videoMobile);
+
+            $("#animatedButton").on("click", function(event) {
+                event.preventDefault();
+                var targetUrl = $(this).attr("href");
+                $(this).find("span").one("webkitAnimationEnd oanimationend msAnimationEnd animationend", function() {
+                    window.location.href = targetUrl;
+                });
+            });
         });
     </script>
 </body>
