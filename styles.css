@@ -62,22 +62,82 @@ body, html {
     transition: opacity 0.5s ease-in-out; 
 }
 
-.shop-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    border-radius: 35px;
-    font-size: 1.2em;
-    font-weight: bold;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 8px 12px 30px rgb(0, 0, 0), inset 2px 8px 10px rgba(255, 0, 0, 0.6);
+a
+{
+    position: absolute;
+    top:80%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+transform-origin: center center;
 }
 
+span
+{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: block;
+text-align: center;
+line-height: 60px;
+font-size: 24px;
+background: rgba(255,255,255,0.5);
+transform-style: preserve-3d;
+backface-visibility: hidden;
+border-radius: 30px;
+text-transform: uppercase;
+color: #fff;
+transition: 1s;
 
-.shop-button:hover {
-    background-color: #ff0000;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8)
+}
+
+span.front
+{
+    transform:rotateX(0deg) translateZ(20px);
+}
+
+a:hover span.front
+{
+    transform:rotateX(-180deg) translateZ(20px);
+}
+
+span.back
+{
+    background: url(lostmemory-alb-line.png)no-repeat center center;
+    background-size: cover;
+    transform:rotateX(180deg) translateZ(20px);
+}
+
+a:hover span.back
+{
+    transform:rotateX(0deg) translateZ(20px);
+}
+
+span.center 
+{
+    background: linear-gradient(to left, #000000 #ff0000) ;
+}
+
+span.center:before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, #000000, #ff0000);
+    border-radius: 30px;
+    transform:translateZ(-1px);
+}
+
+a:hover span.center
+{
+    transform: rotateX(-180deg'angle');
 }
