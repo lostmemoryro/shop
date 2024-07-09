@@ -77,6 +77,15 @@ a {
             transform-origin: center center;
 }
 
+
+@media (max-width: 768px) {
+    a {
+        width: 150px;
+        height: 50px;
+        top: 120%;
+    }
+}
+
 span {
     position: absolute;
     top: 0;
@@ -88,15 +97,21 @@ span {
     line-height: 60px;
     font-size: 24px;
     background: rgba(255, 255, 255, 0.5);
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
     border-radius: 30px;
     text-transform: uppercase;
     color: #fff;
     transition: 1s;
 }
+
+@media (max-width: 768px) {
+    span {
+        line-height: 50px;
+        font-size: 18px;
+    }
+}
+
 
 span.front {
     -webkit-transform: rotateX(0deg) translateZ(20px);
